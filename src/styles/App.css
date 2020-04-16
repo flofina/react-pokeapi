@@ -55,7 +55,14 @@ p {
   text-align: center;
 }
 
-div img {
+.pokemon div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.pokemon img {
+  width: 50%;
+  height: auto;
 }

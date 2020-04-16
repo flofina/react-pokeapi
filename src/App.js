@@ -10,10 +10,8 @@ const App = () => {
 
   const [page, setPage] = useState('');
   const [pokemon, setPokemon] = useState({});
+  const [imagen, setImagen] = useState({});
 
-  const handleClick = e => {
-    setPage(e.target.id);
-  };
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${page}`)
@@ -21,29 +19,39 @@ const App = () => {
       .then(data => setPokemon(data))
   }, [page]);
 
+  const handleClick = e => {
+    setPage((e.target.id));
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${e.target.id}`)
+      .then(res => res.json())
+      .then(data => setImagen(data.sprites.front_default))
+  };
+
   const paginacion = {
-    charmander: <Charmander pokemonData={pokemon}/>,
-    squirtle: <Squirtle pokemonData={pokemon} />,
-    bulbasaur: <Bulbasaur pokemonData={pokemon} />,
-    pikachu: <Pikachu pokemonData={pokemon} />
+    charmander: <Charmander pokemonData={pokemon} pokemonImg={imagen} />,
+    squirtle: <Squirtle pokemonData={pokemon} pokemonImg={imagen} />,
+    bulbasaur: <Bulbasaur pokemonData={pokemon} pokemonImg={imagen} />,
+    pikachu: <Pikachu pokemonData={pokemon} pokemonImg={imagen} />
   }
 
   return (
     <div className="App">
 
       {
-        paginacion[page]
-      }
-
-      {
         !page &&
         <main>
           <div>
-          <h2>SELECCIONA TU POKEMON</h2>
-          <img src={`https://www.ayayay.tv/wp-content/uploads/2016/02/portada-pokemon.jpg`} alt={'imagen de pokemon'} />
+            <h2>SELECCIONA TU POKEMON</h2>
+            <img src={`https://www.ayayay.tv/wp-content/uploads/2016/02/portada-pokemon.jpg`} alt={'imagen de pokemon'} />
           </div>
         </main>
       }
+
+      <div className="pokemon">
+        {
+          paginacion[page]
+        }
+      </div>
 
       <nav>
         <button id='charmander' onClick={handleClick}>Charmander</button>

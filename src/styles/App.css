@@ -1,0 +1,61 @@
+* {
+  background-color: #ccc;
+}
+
+.App {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main img {
+  width: 800px;
+  height: auto;
+}
+
+nav {
+  margin: 40px;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav button {
+  width: 150px;
+  height: 40px;
+  background-color: #888;
+  color: #333;
+  font-size: 20px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+} 
+
+h1, h2, h3 {
+  width: 450px;
+  text-align: center;
+  background-color: #888;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 40px 0;
+}
+
+p {
+  text-align: center;
+}
+
+div img {
+  display: flex;
+  justify-content: center;
+}

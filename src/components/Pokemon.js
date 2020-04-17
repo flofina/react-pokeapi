@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Squirtle = ({pokemonData, pokemonImg}) => {
+const Pokemon = ({pokemonData, pokemonImg}) => {
 
   return(
     <div>
@@ -12,4 +12,4 @@ const Squirtle = ({pokemonData, pokemonImg}) => {
   )
 }
 
-export default Squirtle;
+export default Pokemon;

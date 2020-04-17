@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 
-import Charmander from './components/Charmander';
-import Squirtle from './components/Squirtle';
-import Bulbasaur from './components/Bulbasaur';
-import Pikachu from './components/Pikachu';
+import Pokemon from './components/Pokemon';
 
 const App = () => {
 
@@ -28,10 +25,10 @@ const App = () => {
   };
 
   const paginacion = {
-    charmander: <Charmander pokemonData={pokemon} pokemonImg={imagen} />,
-    squirtle: <Squirtle pokemonData={pokemon} pokemonImg={imagen} />,
-    bulbasaur: <Bulbasaur pokemonData={pokemon} pokemonImg={imagen} />,
-    pikachu: <Pikachu pokemonData={pokemon} pokemonImg={imagen} />
+    charmander: <Pokemon pokemonData={pokemon} pokemonImg={imagen} />,
+    squirtle: <Pokemon pokemonData={pokemon} pokemonImg={imagen} />,
+    bulbasaur: <Pokemon pokemonData={pokemon} pokemonImg={imagen} />,
+    pikachu: <Pokemon pokemonData={pokemon} pokemonImg={imagen} />
   }
 
   return (
@@ -48,9 +45,11 @@ const App = () => {
       }
 
       <div className="pokemon">
+
         {
           paginacion[page]
         }
+      
       </div>
 
       <nav>
